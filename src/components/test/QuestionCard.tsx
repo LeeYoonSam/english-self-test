@@ -1,4 +1,4 @@
-import { useState, useEffect, FormEvent, KeyboardEvent } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { Question } from '../../types';
 import { Card } from '../common/Card';
 import { Button } from '../common/Button';
@@ -19,12 +19,6 @@ export function QuestionCard({ question, onAnswer }: QuestionCardProps) {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (answer.trim()) {
-      onAnswer(answer);
-    }
-  };
-
-  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && answer.trim()) {
       onAnswer(answer);
     }
   };
@@ -55,7 +49,6 @@ export function QuestionCard({ question, onAnswer }: QuestionCardProps) {
             type="text"
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
-            onKeyDown={handleKeyDown}
             placeholder={placeholder}
             className="w-full px-4 py-3 text-lg border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-center"
             autoFocus
