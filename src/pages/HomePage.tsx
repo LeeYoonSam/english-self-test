@@ -50,7 +50,11 @@ export function HomePage() {
         ) : (
           <div className="grid gap-4">
             {wordLists.map((wordList) => (
-              <Card key={wordList.id} className="hover:shadow-lg transition-shadow">
+              <Card
+                key={wordList.id}
+                className="hover:shadow-lg transition-shadow cursor-pointer"
+                onClick={() => navigate(`/wordlist/${wordList.id}`)}
+              >
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-gray-900">
@@ -61,7 +65,7 @@ export function HomePage() {
                       <span>생성: {formatDate(wordList.createdAt)}</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
                     <Button
                       onClick={() => navigate(`/test/${wordList.id}`)}
                     >
