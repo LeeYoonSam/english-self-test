@@ -27,7 +27,7 @@ export function HomePage() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">영어 단어 테스트</h1>
-            <p className="text-gray-500 mt-1">사진으로 단어장을 만들고 테스트하세요</p>
+            <p className="text-gray-500 mt-1">단어장을 만들고 테스트하세요</p>
           </div>
           <Button onClick={() => navigate('/upload')} size="lg">
             + 새 단어장
@@ -41,7 +41,7 @@ export function HomePage() {
               저장된 단어장이 없습니다
             </h2>
             <p className="text-gray-500 mb-6">
-              영어 단어책 사진을 업로드하여 첫 단어장을 만들어보세요
+              단어와 뜻을 입력하여 첫 단어장을 만들어보세요
             </p>
             <Button onClick={() => navigate('/upload')}>
               단어장 만들기

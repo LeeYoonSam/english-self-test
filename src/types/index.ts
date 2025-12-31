@@ -56,11 +56,3 @@ export interface TestResult {
   wrongAnswers: Answer[];
   completedAt: number;
 }
-
-// OCR 처리 상태
-export interface OcrState {
-  status: 'idle' | 'loading' | 'processing' | 'completed' | 'error';
-  progress: number;       // 0-100
-  extractedText: string;
-  error?: string;
-}
