@@ -25,3 +25,9 @@ npm-debug.log*
 
 # Cache
 .cache/
+
+# Claude Code
+.claude/
+
+# Tesseract trained data
+*.traineddata
