@@ -5,6 +5,28 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Self Test</title>
+    <!-- GitHub Pages SPA routing workaround -->
+    <script>
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+      // Handle query parameter routing from 404.html
+      (function() {
+        var query = window.location.search;
+        if (query.startsWith('?/')) {
+          var decoded = query.slice(2).split('&')[0];
+          var path = '/' + decoded;
+          var hash = window.location.hash;
+          history.replaceState(null, null,
+            window.location.pathname + path + hash
+          );
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
